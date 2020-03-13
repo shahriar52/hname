@@ -23,9 +23,9 @@ Clone this repository,
 ### Linux
 For the Linux machines run ansible playbooks as follows:
 
-            ansible-playbook -l linux -i hosts linux.yml -K -b -u <ansible_user>
+            ansible-playbook -l linux -i /etc/ansible/hosts linux.yml -K -b -u <ansible_user>
             
 ### Windows
 For the Windows hosts run ansible playbooks as follows:
 
-            ansible-playbook -l windows -i hosts windows.yml
+            ansible-playbook -l windows -i /etc/ansible/hosts windows.yml
