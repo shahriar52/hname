@@ -1,4 +1,8 @@
 ---
+- name: install python
+  package:
+    name: python
+    state: present
 
 - name: copy systemd file
   template:
