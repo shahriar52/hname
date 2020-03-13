@@ -1,5 +1,5 @@
 # hname
-Print the hostname with time stamp into a file periodically.
+Print the hostname with a timestamp into a file periodically.
 
 ## Requirements
 - A Linux Ansible host with ansible version 2.8 or above.
@@ -7,13 +7,11 @@ Print the hostname with time stamp into a file periodically.
 
 ## Limitations
 - Works on Linux distributions that use systemd.
-- On windows, the service fail after n restart attempt could not be configured due the current limitation of ansible module. This is an on going development. See more at https://github.com/ansible/ansible/pull/56445
+- On the Windows hosts, the service fails after n restart attempt could not be configured due to the current limitation of the ansible module. This is an ongoing development. See more at https://github.com/ansible/ansible/pull/56445
 
 ## Install
 Populate the ansible hosts file at /etc/ansible/hosts. A sample hosts file given in this repository.
-Seperate ansible playbooks are given for Linux and Windows deployments. Adjust the time period to run the script; the systemd user and Windows user to run the service in the group_vars/all.yml file.
-
-*To store the passwords one can use ansible vault for security issues.*
+Separate ansible playbooks are given for Linux and Windows deployments. Adjust the time period to run the script; the systemd user and Windows user to run the service in the group_vars/all.yml file.
 
 Clone this repository,
 
@@ -23,9 +21,9 @@ Clone this repository,
 ### Linux
 For the Linux machines run ansible playbooks as follows:
 
-            ansible-playbook -l linux -i /etc/ansible/hosts linux.yml -K -b -u <ansible_user>
+            ansible-playbook -l linux -i hosts linux.yml -K -b -u <ansible_user>
             
 ### Windows
 For the Windows hosts run ansible playbooks as follows:
 
-            ansible-playbook -l windows -i /etc/ansible/hosts windows.yml
+            ansible-playbook -l windows -i hosts windows.yml
