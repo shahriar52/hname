@@ -13,6 +13,8 @@ Print the hostname with a timestamp into a file periodically.
 Populate the ansible hosts file at /etc/ansible/hosts. A sample hosts file given in this repository.
 Separate ansible playbooks are given for Linux and Windows deployments. Adjust the time period to run the script; the systemd user and Windows user to run the service in the group_vars/all.yml file.
 
+*Note One should use Ansible Vault to store secrets/password for security reasons.*
+
 Clone this repository,
 
             git clone https://github.com/shahriar52/hname.git
