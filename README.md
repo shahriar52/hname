@@ -14,10 +14,16 @@ Populate the ansible hosts file at /etc/ansible/hosts. A sample hosts file given
 Seperate ansible playbooks are given for Linux and Windows deployments. Adjust the time period to run the script; the systemd user and Windows user to run the service in the group_vars/all.yml file.
 
 Clone this repository,
+
             git clone https://github.com/shahriar52/hname.git
             cd hname
 
 ### Linux
 For the Linux machines run ansible playbooks as follows:
 
-            ansible-playbook -l linux linux.yml -K -b -u <ansible_user>
+            ansible-playbook -l linux -i hosts linux.yml -K -b -u <ansible_user>
+            
+### Windows
+For the Windows hosts run ansible playbooks as follows:
+
+            ansible-playbook -l windows -i hosts windows.yml
