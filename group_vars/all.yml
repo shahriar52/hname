@@ -1,0 +1,5 @@
+---
+period: 300
+systemd_user: shahriar
+win_user: user
+win_password: password

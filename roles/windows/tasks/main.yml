@@ -1,0 +1,29 @@
+---
+
+- name: Install NSSM
+  win_chocolatey:
+    name: nssm
+    state: present
+
+- name: copy powershell script file
+  win_template:
+    src: hname.ps1.j2
+    dest: C:\hname.ps1
+
+- name: Run Powershell commands to install service via nssm
+  win_shell: |
+    $nssm = (Get-Command nssm).Source
+    $serviceName = 'hname'
+    $powershell = (Get-Command powershell).Source
+    $scriptPath = 'C:\hname.ps1'
+    $arguments = '-ExecutionPolicy Bypass -NoProfile -File "{0}"' -f $scriptPath
+    & $nssm install $serviceName $powershell $arguments
+
+
+- name: Configure and start the hname service
+  win_service:
+    name: hname
+    user: {{ win_user }}
+    password: {{ win_password }}
+    start_mode: auto
+    state: started

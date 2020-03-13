@@ -1,0 +1,17 @@
+import socket
+import time
+from datetime import datetime
+
+while True:
+    try:
+        hostname = socket.gethostname()
+        dateTimeObj = datetime.now()
+        timestampStr = dateTimeObj.strftime("%d-%b-%Y (%H:%M:%S.%f)")
+        f = open("/tmp/hostname.txt", "a")
+        f.write('{0} {1}\n'.format(hostname, timestampStr))
+        f.close()
+        time.sleep({{ period }})
+    except:
+        print "Exception Occured"
+        break
+

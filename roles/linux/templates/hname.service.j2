@@ -1,0 +1,13 @@
+[Unit]
+Description=hname job
+
+[Service]
+Restart=always
+StartLimitInterval=40
+StartLimitBurst=3
+RestartSec=10
+User={{ systemd_user }}
+ExecStart=/usr/bin/python /usr/local/src/hname.py
+
+[Install]
+WantedBy=multi-user.target

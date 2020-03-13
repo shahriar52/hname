@@ -1,0 +1,16 @@
+while($true) {
+try {
+    $now = Get-Date -UFormat '%d-%B-%Y (%T)'
+    $hname = hostname
+
+    $results_file = "C:\Windows\Temp\hostname.txt"
+
+    "$hname $now" | Out-File -File $results_file -Append
+    }
+catch {
+    "Execution failed"
+     return
+    }
+Start-Sleep –Seconds {{ period }}
+}
+

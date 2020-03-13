@@ -1,0 +1,21 @@
+---
+
+- name: copy systemd file
+  template:
+    src: hname.service.j2
+    dest: /etc/systemd/system/hname.service
+    owner: root
+    mode: '0644'
+
+- name: copy script file
+  template:
+    src: hname.py.j2
+    dest: /usr/local/src/hname.py
+
+- name: start the service
+  systemd:
+    state: started
+    enabled: yes
+    daemon_reload: yes
+    name: hname
+
