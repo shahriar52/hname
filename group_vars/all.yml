@@ -1,4 +1,5 @@
 ---
+## Time period of execution is seconds 
 period: 300
 systemd_user: shahriar
 win_user: user
