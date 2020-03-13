@@ -1,10 +1,16 @@
 # hname
 Print the hostname with time stamp into a file periodically.
 
-## Pre-requisites
+## Requirements
 - A Linux Ansible host with ansible version 2.8 or above.
 - winrm setup on Windows machine for deployment. More information at https://docs.ansible.com/ansible/latest/user_guide/windows_setup.html
 
 ## Limitations
-- Works on Linux distribution that uses systemd.
-- On windows service fail after n restart attempt could not be configured due the current limitation of ansible module. This is a on going development. See https://github.com/ansible/ansible/pull/56445
+- Works on Linux distributions that use systemd.
+- On windows, the service fail after n restart attempt could not be configured due the current limitation of ansible module. This is an on going development. See more at https://github.com/ansible/ansible/pull/56445
+
+## Install
+Populate the ansible hosts file. A sample hosts file given in this repository.
+Seperate ansible playbooks are given for Linux and Windows deployments. Adjust the time period to run the script; the systemd user and Windows user to run the service in the group_vars/all.yml file
+
+### Linux
