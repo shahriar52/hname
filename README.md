@@ -7,7 +7,7 @@ Print the hostname with a timestamp into a file periodically.
 
 ## Limitations
 - Works on Linux distributions that use systemd.
-- On the Windows hosts, the service fails after n restart attempt could not be configured due to the current limitation of the ansible module. This is an ongoing development. See more at https://github.com/ansible/ansible/pull/56445
+- On the Windows hosts, the service fails after n restart attempts could not be configured due to the current limitation of the ansible module. This is an ongoing development. See more at https://github.com/ansible/ansible/pull/56445
 
 ## Install
 Populate the ansible hosts file at /etc/ansible/hosts. A sample hosts file given in this repository.
